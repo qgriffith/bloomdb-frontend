@@ -14,32 +14,32 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">Skeleton</strong>
+				<strong class="text-xl uppercase">Xbloomdb</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a
 					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
+					href="http://github.com/qgriffith"
+					target="_blank"
+					rel="noreferrer"
+				>
+					Github
+				</a>
+				<a
+					class="btn btn-sm variant-ghost-surface"
+					href="https://xbloomdb.com"
+					target="_blank"
+					rel="noreferrer"
+				>
+					Xbloom
+				</a>
+				<a
+					class="btn btn-sm variant-ghost-surface"
+					href="https://discord.gg/DYG6Jxte9C"
 					target="_blank"
 					rel="noreferrer"
 				>
 					Discord
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Twitter
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://github.com/skeletonlabs/skeleton"
-					target="_blank"
-					rel="noreferrer"
-				>
-					GitHub
 				</a>
 			</svelte:fragment>
 		</AppBar>
