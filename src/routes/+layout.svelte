@@ -27,7 +27,7 @@
 				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface"
-					href="https://xbloomdb.com"
+					href="https://xbloom.com"
 					target="_blank"
 					rel="noreferrer"
 				>
