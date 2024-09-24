@@ -27,7 +27,7 @@
 			<div>
 				<span class="badge bg-orange-800">☕</span>
 				<span class="flex-auto">
-					<dt class="font-bold"><a class="anchor" href="recipe/{recipe.id}">{recipe.title}</a></dt>
+					<dt class="font-bold"><a class="anchor" href="recipe/{recipe.slug}">{recipe.title}</a></dt>
 					<dd class="text-sm opacity-50">{recipe.roaster}</dd>
 				</span>
 			</div>
