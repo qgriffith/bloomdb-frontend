@@ -1,7 +1,8 @@
 <script>
 	import { onMount } from "svelte";
 	export let data;
-	const api_endpoint = `https://bloomdb-production.up.railway.app/api/recipe/${data.slug}`;
+	import {PUBLIC_API_URL} from '$env/static/public';
+	const api_endpoint = `${PUBLIC_API_URL}/recipe/${data.slug}`;
 	let recipe = [];
 
 	onMount(async () => {
