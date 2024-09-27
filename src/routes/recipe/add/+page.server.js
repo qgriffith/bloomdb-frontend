@@ -1,24 +1,12 @@
 import { PUBLIC_API_URL } from '$env/static/public';
 import { redirect } from '@sveltejs/kit';
-
+import { getFormattedDate } from '$lib/utils.js';
 /** @type {import('./$types').Actions} */
 export const actions = {
 	default: async ({request}) => {
 		const data = await request.formData();
 
-		function getFormattedDate() {
-			const date = new Date();
 
-			const year = date.getUTCFullYear();
-			const month = String(date.getUTCMonth() + 1).padStart(2, '0'); // Months are zero-based
-			const day = String(date.getUTCDate()).padStart(2, '0');
-
-			const hours = String(date.getUTCHours()).padStart(2, '0');
-			const minutes = String(date.getUTCMinutes()).padStart(2, '0');
-			const seconds = String(date.getUTCSeconds()).padStart(2, '0');
-
-			return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
-		}
 
 		const newFormData = new URLSearchParams();
 		for (let pair of data.entries()) {
