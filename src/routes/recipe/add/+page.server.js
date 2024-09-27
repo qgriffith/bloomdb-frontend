@@ -1,4 +1,5 @@
 import { PUBLIC_API_URL } from '$env/static/public';
+import { redirect } from '@sveltejs/kit';
 
 /** @type {import('./$types').Actions} */
 export const actions = {
@@ -42,5 +43,6 @@ export const actions = {
 		} catch (error) {
 			console.error("Failed to fetch recipes:", error);
 		}
+		redirect(303, "/recipes");
 	}
 };
