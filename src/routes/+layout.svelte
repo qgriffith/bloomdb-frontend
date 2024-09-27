@@ -1,7 +1,6 @@
 <script lang="ts">
 	import '../app.postcss';
-	import { AppShell, AppBar, AppRail, AppRailAnchor } from '@skeletonlabs/skeleton';
-	import { page } from '$app/stores';
+	import { AppShell, AppBar, TreeView, TreeViewItem } from '@skeletonlabs/skeleton';
 	import { Plus, Coffee, House } from 'lucide-svelte';
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
@@ -49,21 +48,21 @@
 	<!-- Page Route Content -->
 	<svelte:fragment slot="sidebarLeft">
 		<!-- Hidden below Tailwind's large breakpoint -->
-		<div id="sidebar-left" class="p-10 hidden lg:block">
-			<AppRail>
-				<AppRailAnchor href="/" selected={$page.url.pathname === '/'} title="Home">
-					<svelte:fragment slot="lead"><House /></svelte:fragment>
-					<span>Home</span>
-				</AppRailAnchor>
-				<AppRailAnchor href="/recipes" selected={$page.url.pathname === '/recipes'} title="Recipes">
-					<svelte:fragment slot="lead"><Coffee /></svelte:fragment>
-					<span>Recipes</span>
-				</AppRailAnchor>
-				<AppRailAnchor href="/recipe/add" selected={$page.url.pathname === '/recipe/add'} title="Add Recipe">
-					<svelte:fragment slot="lead"><Plus /></svelte:fragment>
-					<span>Add</span>
-				</AppRailAnchor>
-			</AppRail>
+		<div id="sidebar-left" class="p-10 sm:block">
+			<TreeView>
+				<TreeViewItem>
+					<svelte:fragment slot="lead"><House/></svelte:fragment>
+					<a href="/" >Home</a>
+				</TreeViewItem>
+				<TreeViewItem>
+					<svelte:fragment slot="lead"><Coffee/></svelte:fragment>
+					<a href="/recipes">Recipes</a>
+				</TreeViewItem>
+				<TreeViewItem>
+					<svelte:fragment slot="lead"><Plus/></svelte:fragment>
+					<a href="/recipes">Add Recipe</a>
+				</TreeViewItem>
+			</TreeView>
 		</div>
 	</svelte:fragment>
 	<slot />
