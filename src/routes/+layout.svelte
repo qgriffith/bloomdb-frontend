@@ -48,7 +48,7 @@
 	<!-- Page Route Content -->
 	<svelte:fragment slot="sidebarLeft">
 		<!-- Hidden below Tailwind's large breakpoint -->
-		<div id="sidebar-left" class="p-10 sm:block">
+		<div id="sidebar-left" class="p-1">
 			<TreeView>
 				<TreeViewItem>
 					<svelte:fragment slot="lead"><House/></svelte:fragment>
@@ -60,7 +60,7 @@
 				</TreeViewItem>
 				<TreeViewItem>
 					<svelte:fragment slot="lead"><Plus/></svelte:fragment>
-					<a href="/recipes">Add Recipe</a>
+					<a href="/recipe/add">Add Recipe</a>
 				</TreeViewItem>
 			</TreeView>
 		</div>
