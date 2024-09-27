@@ -104,6 +104,8 @@ onMount(async () => {
 
 	</div>
 	</div>
-		<button>Submit</button>
+		<div class="py-4">
+		<button type="submit" class="btn variant-filled">Submit</button>
+		</div>
 	</form>
 </main>
