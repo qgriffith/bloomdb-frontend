@@ -6,7 +6,13 @@ const brew_endpoint = `${PUBLIC_API_URL}/brewers`;
 const roast_endpoint = `${PUBLIC_API_URL}/roasts`;
 let brewers = [];
 let roasts = [];
-
+import {page} from "$app/stores";
+import {goto} from "$app/navigation"; onMount(() => {
+	if(!$page.data?.session) {
+		goto('/');
+		return;
+	}
+});
 onMount(async () => {
 	console.log("onMount");
 	try {
@@ -34,7 +40,9 @@ onMount(async () => {
 });
 
 </script>
-
+{#if $page.data?.session}
+	<div>Protected</div>
+{/if}
 <main class="flex-auto">
 	<form method="POST">
 	<div class="space-y-2">

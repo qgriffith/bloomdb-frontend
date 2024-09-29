@@ -1,4 +1,22 @@
+<script>
+	import {signIn, signOut} from "@auth/sveltekit/client"
+	import {page} from "$app/stores";
+</script>
 <div class="py-10">
+	<p>
+		{#if $page.data.session}
+        <span>
+            <small>Signed in as</small><br/>
+            <strong>{$page.data.session.user?.name ?? "User"}</strong>
+        </span>
+			<button on:click={() => signOut()} class="anchor">Sign out</button>
+		{:else}
+			<span>You are not signed in</span>
+			<button class="anchor" on:click={() => signIn("google")}>
+				Sign In with Google
+			</button>
+		{/if}
+	</p>
 	<div class="card justify-center items-center">
 		<header class="card-header h-1 font-bold py-4">Xbloomdb Community Site</header>
 		<section class="p-4">This a unofficial Xbloom database for sharing recipe links for the Xbloom and Xbloom Studio .</section>
