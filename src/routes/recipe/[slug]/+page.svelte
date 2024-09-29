@@ -32,6 +32,7 @@
 				<li>Roaster: <span class="p-2">{recipe.roaster}</span></li>
 				<li>Roast Level: <span class="p-2">Light-Medium</span></li>
 				<li>Creator: <span class="p-2">{recipe.creator}</span></li>
+				<li>Submitter:<span class="p-2">{recipe.oauth_username}</span></li>
 				<li>Buy: <a class="p-2 bg-secondary-hover-token anchor" href="{recipe.shop_link}">Shop</a></li>
 			</ul>
 		</section>
