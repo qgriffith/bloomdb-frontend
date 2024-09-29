@@ -13,9 +13,6 @@ import {goto} from "$app/navigation"; onMount(() => {
 		goto('/');
 		return;
 	}
-		else {
-			let username = $page.data.session.user?.name
-		}
 });
 
 onMount(async () => {
@@ -113,7 +110,11 @@ onMount(async () => {
 				<input class="input" title="shop_link" name="shop_link" type="url" placeholder="http://shop" />
 			</label>
 			<input type="hidden" name="user_id" value="1" />
-			<input type="hidden" name="oauth_username" value="{username}" />
+				{#if $page.data?.session}
+					<input type="hidden" name="oauth_username" value="{$page.data.session.user?.name}" />
+					{:else}
+					<input type="hidden" name="oauth_username" value="admin" />
+					{/if}
 		</div>
 
 	</div>
