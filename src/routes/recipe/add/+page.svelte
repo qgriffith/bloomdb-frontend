@@ -111,9 +111,9 @@ onMount(async () => {
 			</label>
 			<input type="hidden" name="user_id" value="1" />
 				{#if $page.data?.session}
-					<input type="hidden" name="oauth_username" value="{$page.data.session.user?.name}" />
+					<input type="hidden" name="oauth_user" value="{$page.data.session.user?.name}" />
 					{:else}
-					<input type="hidden" name="oauth_username" value="admin" />
+					<input type="hidden" name="oauth_user" value="admin" />
 					{/if}
 		</div>
 
