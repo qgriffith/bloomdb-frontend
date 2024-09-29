@@ -6,13 +6,18 @@ const brew_endpoint = `${PUBLIC_API_URL}/brewers`;
 const roast_endpoint = `${PUBLIC_API_URL}/roasts`;
 let brewers = [];
 let roasts = [];
+let username = '';
 import {page} from "$app/stores";
 import {goto} from "$app/navigation"; onMount(() => {
-	if(!$page.data?.session) {
+		if(!$page.data?.session) {
 		goto('/');
 		return;
 	}
+		else {
+			let username = $page.data.session.user?.name
+		}
 });
+
 onMount(async () => {
 	console.log("onMount");
 	try {
@@ -108,6 +113,7 @@ onMount(async () => {
 				<input class="input" title="shop_link" name="shop_link" type="url" placeholder="http://shop" />
 			</label>
 			<input type="hidden" name="user_id" value="1" />
+			<input type="hidden" name="oauth_username" value="{username}" />
 		</div>
 
 	</div>
